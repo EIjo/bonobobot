@@ -14,7 +14,7 @@ botVersion = "1.0"
 
 @bot.event
 async def on_ready():
-    print("Bot starting...")
+    print("moker")
     print("Bot Version: "+botTitle+" "+botVersion)
     print("userid: " + bot.user.id)
     print("Startup complete.")
