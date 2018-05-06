@@ -1,6 +1,7 @@
 # Testbot by EIjo & Jarifa
 
 import discord
+import cubify
 from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
@@ -26,8 +27,8 @@ async def on_message(message):
 
     if message.content.startswith('#cube'):
         content = message.content[6:]
-        cubified = "placeholder"
-        await bot.send_message(message.channel, "```" + cubified + "```")
+        cubified = cubify.cubify(word=content, subsqaures=(0 == 0))
+        await bot.send_message(message.channel, "```\n" + cubified + "```")
 
     if message.content.startswith('#help'):
         embed = discord.Embed(title=botTitle + " version: " + botVersion, description="The list of commands are:")
@@ -36,7 +37,5 @@ async def on_message(message):
 
         await bot.send_message(message.channel, embed=embed)
 
-try:
-    bot.run(input("Input bot token: "))
-except Exception:
-    print("Invalid token")
+
+bot.run(input("Input bot token: "))
