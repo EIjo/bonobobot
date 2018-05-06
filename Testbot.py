@@ -14,7 +14,7 @@ botVersion = "1.0"
 
 @bot.event
 async def on_ready():
-    print("moker")
+    print("Bot Starting...")
     print("Bot Version: "+botTitle+" "+botVersion)
     print("userid: " + bot.user.id)
     print("Startup complete.")
@@ -74,6 +74,9 @@ async def on_message(message):
         cubified = cubify.cubify(word=content, subsqaures=(0 == 0))
         await bot.send_message(message.channel, "```\n" + cubified + "```")
 
+    if message.content.startswith('#memelist'):
+        await bot.send_message(message.channel, "https://www.youtube.com/playlist?list=PLROh1mXiYegglsUQRAzJdMDSxPIlPsPF7&disable_polymer=true")
+
     if message.content.startswith('#help'):
         embed = discord.Embed(title=botTitle + " version: " + botVersion, description="The list of commands are:")
         embed.add_field(name="#ping", value="returns 'Pong!'")
@@ -81,5 +84,7 @@ async def on_message(message):
 
         await bot.send_message(message.channel, embed=embed)
 
-
-bot.run(input("Input bot token: "))
+try:
+    bot.run(input("Input bot token: "))
+except:
+    print('lel')
