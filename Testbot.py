@@ -36,4 +36,7 @@ async def on_message(message):
 
         await bot.send_message(message.channel, embed=embed)
 
-bot.run(input("Input bot token: "))
+try:
+    bot.run(input("Input bot token: "))
+except Exception:
+    print("Invalid token")
