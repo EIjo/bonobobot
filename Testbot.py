@@ -13,10 +13,10 @@ botVersion = "1.0"
 
 @bot.event
 async def on_ready():
-    print("Test hehe xd")
-    print("Bot Version: ")
+    print("Bot starting...")
+    print("Bot Version: "+botTitle+" "+botVersion)
     print("userid: " + bot.user.id)
-
+    print("Startup complete.")
 
 @bot.event
 async def on_message(message):
@@ -36,5 +36,4 @@ async def on_message(message):
 
         await bot.send_message(message.channel, embed=embed)
 
-
-bot.run("NDQyNzg1NTg2NDAzNjA2NTU5.DdD7SA.7vDn92RKl0pVOczdCNrcelD2mD0")
+bot.run(input("Input bot token: "))
