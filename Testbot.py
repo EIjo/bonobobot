@@ -48,3 +48,4 @@ try:
         bot.run(f.read())
 except Exception:
     print("Invalid token")
+
