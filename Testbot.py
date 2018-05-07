@@ -44,7 +44,7 @@ async def on_message(message):
 
 
 try:
-    with open("testfile.txt") as f:
+    with open("token.txt") as f:
         bot.run(f.read())
 except Exception:
     print("Invalid token")
