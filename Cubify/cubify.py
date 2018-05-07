@@ -1,4 +1,5 @@
-filler: str = '/'
+
+filler = '/'
 
 
 def cubify(word, subsqaures=True):

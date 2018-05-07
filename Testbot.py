@@ -1,9 +1,12 @@
 # Testbot by EIjo & Jarifa
 
 import discord
+import Points
+from Points import Points
+
 from discord.ext import commands
 
-import cubify
+from Cubify import cubify
 
 bot = commands.Bot(command_prefix='#')
 botTitle = "Testbot"
@@ -41,6 +44,10 @@ async def on_message(message):
         embed.add_field(name="#cube", value="returns cubified version of input")
 
         await bot.send_message(message.channel, embed=embed)
+
+    if message.content.startswith(""):
+        Points.addPoints(message.author.id)
+        print(message.author.id)
 
 
 try:
